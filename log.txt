@@ -1,0 +1,5 @@
+2022.03.28 21:14 -> ZeroDivisionError Hatası
+2022.03.28 21:15 -> ZeroDivisionError Hatası
+2022.03.28 21:25 -> ValueError Hatası
+2022.03.28 21:25 -> ZeroDivisionError Hatası
+2022.03.28 21:27 -> ValueError Hatası
