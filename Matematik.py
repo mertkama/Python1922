@@ -1,21 +1,35 @@
-def Topla(s1, s2):
-	return s1 + s2
+class Matematik:
+
+    @classmethod
+    def topla(cls, *sayilar):
+        toplam = 0
+        for sayi in sayilar:
+            toplam += int(sayi)
+        print(toplam)
+
+    @classmethod
+    def cikar(cls, s1, s2):
+        print((s1 - s2))
+
+    @classmethod
+    def carp(cls, *sayilar):
+        carpim = 1
+        for i in sayilar:
+            carpim *= i
+        print(carpim)
+
+    @classmethod
+    def bol(cls, s1, s2):
+        try:
+            bolum = s1/s2
+            print(int(bolum))
+        except ZeroDivisionError:
+            print("Sıfıra bölme yapılamaz")
+        except:
+            print("Bölme işleminde hata oluştu")
 
 
-def Cikar(s1, s2):
-	return s1 - s2
-
-
-def Carp(s1, s2):
-	return s1 * s2
-
-
-def Bol(s1,s2):
-	if (s2==0):
-		return -1
-	return s1/s2
-
-print("Merhaba ben matematik modülüyüm her zaman çalışırım")
-
-if __name__ == '__main__':
-    print("Sadece bu dosyadan çalıştırılırsa burası çalışır")
+Matematik.topla(5, 6, 5, 5, 12)
+Matematik.cikar(10, 5)
+Matematik.carp(1, 2, 3, 4, 5)
+Matematik.bol(1,1)
