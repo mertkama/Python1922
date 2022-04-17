@@ -1,23 +1,17 @@
-class Otomobil:
+from Arac import Arac
 
-    def __init__(self, marka, model, renk, motor_hacmi, uretim_yili):
-        self.marka = marka
-        self.model = model
-        self.renk = renk
-        self.motor_hacmi = motor_hacmi
-        self.uretim_yili = uretim_yili
 
-    def kaydet(self):
-        import os, datetime
+class Otomobil(Arac):
 
-        dizin = "C:\\Test\\"
-        if not os.path.exists(dizin):
-            os.mkdir(dizin)
+    def __init__(self):
+        super().__init__()
+        self.KasaTipi = "Sedan"
+        self.VitesTipi = "Otomatik"
 
-        dosya = dizin + str(datetime.date.today()) + ".txt"  #C:\Test\GününTarihi.txt
-        acik_dosya = open(dosya, "a")
+    def BilgiYazdir(self):
+        super().BilgiYazdir()
+        print(f"""
+            Kasa Tipi       :     {self.KasaTipi}
+            Vites Tipi      :     {self.VitesTipi}
+        """)
 
-        acik_dosya.write("\nMarka:" + str(self.marka) + "\nModel:" + str(self.model) + "\nRenk:" + str(self.renk)
-                         + "\nMotor Hacmi:" + str(self.motor_hacmi) + "\nÜretim Yılı:" + str(self.uretim_yili))
-
-        acik_dosya.close()
