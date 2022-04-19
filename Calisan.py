@@ -1,18 +1,33 @@
 class Calisan():
+    _personel = []
 
-    def __init__(self, isim, maas, departman):
-        print("Çalışan sınıfının init fonksiyonu çalıştı")
-        self.isim =  isim
-        self.maas =  maas
-        self.departman =  departman
+    def __init__(self, isim):
+        self._isim = isim
+        self.personel_ekle()
 
-
-    def bilgiGoster(self):
-        print("Çalışan sınıfının bilgileri....")
-        print(f"İsim:\t{self.isim}\n Maaş:\t{self.maas}\
-        n Departman:\t{self.departman}")
+    def personel_ekle(self):
+        self._personel.append(self._isim)
+        print("{} adlı kişi personel listesine eklendi".format(self._isim))
 
     @classmethod
-    def departman_degistir(cls, yeni_departman, self):
-        print("Departman Değiştiriliyor....")
-        self.departman =  yeni_departman
+    def personelleri_gorutule(cls):
+        print("PERSONEL LİSTESİ")
+        for personel in cls._personel:
+            print(personel)
+
+    @property
+    def isim(self):
+        return self._isim
+
+    @isim.setter
+    def isim(self, value):
+        kisi = self._personel.index(self.isim)
+        self._personel[kisi] = value
+        print("Yeni İsim : ", value)
+
+
+calisan1 = Calisan("ALi")
+calisan1.personelleri_gorutule()
+calisan1.isim =  "Veli"
+
+
